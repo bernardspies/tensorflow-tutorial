@@ -104,6 +104,14 @@ h_fc1 <- tf$nn$relu(tf$matmul(h_pool2_flat, W_fc1) + b_fc1)
 keep_prob <- tf$placeholder(tf$float32)
 h_fc1_drop <- tf$nn$dropout(h_fc1, keep_prob)
 
+
+#readout layer
+W_fc2 <- weight_variable(shape(1024L, 10L))
+b_fc2 <- bias_variable(shape(10L))
+
+y_conv <- tf$nn$softmax(tf$matmul(h_fc1_drop, W_fc2) + b_fc2)
+
+
 #W_fc2 <- weight_variable(shape(1024L, 10L))
 b_fc2 <- bias_variable(shape(10L))
 
