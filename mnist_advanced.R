@@ -19,6 +19,11 @@ library(tensorflow)
 library(tensorflow)
 sess <- tf$InteractiveSession()
 
+
+
+
+
+
 # Create the model
 x <- tf$placeholder(tf$float32, shape(NULL, 784L))
 W <- tf$Variable(tf$zeros(shape(784L, 10L)))
